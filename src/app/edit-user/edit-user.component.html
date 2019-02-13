@@ -1,0 +1,51 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-sm-2" style="background-color:yellow;">
+      <ul class="">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="../../dashboard">Dashboard </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="../../adduser">Add User</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="../../userdetails">User Details </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="../../changepassword">Change Password </a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" routerLink="../../login">Logout </a>
+          </li>
+      </ul>
+    </div>
+    <div class="col-sm-10" style="background-color:pink;">
+    
+      <p>Edit User</p>
+
+      <div *ngIf="isLoadingData" style="text-align:center" id="spinner">
+          <h1>Loading...</h1>
+       </div>
+
+      <form *ngIf="isEdit" [formGroup]="rForm"   (ngSubmit)="updateUser(rForm.value)" >
+      
+       Name: <input type="text"   class="second"   [(ngModel)]="user.name"   formControlName="name" placeholder="Name" ><br>
+          <div *ngIf="alert" >
+            <div class="alert alert-danger" style="width:85% !important" *ngIf="!rForm.controls['name'].valid ">{{ formAlert }}</div>
+          </div>
+      
+     <br>     Email:   <input type="text"   class="second" [(ngModel)]="user.email" formControlName="email" placeholder="Email"> <br>
+          <div *ngIf="alert" >
+            <div class="alert alert-danger" style="width:85% !important" *ngIf="!rForm.controls['email'].valid ">{{ formAlert }}</div>
+            </div>
+            <br>   Age: <input type="text"  class=" second"  name="login" placeholder="Age"> <br>
+            <br>  <input type="submit" class="button expanded"   value="UPDATE">
+          
+      </form>
+
+
+
+    </div>
+  </div>
+</div>

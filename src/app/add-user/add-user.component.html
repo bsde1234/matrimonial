@@ -1,0 +1,29 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-sm-2" style="background-color:yellow;">
+      <mysidebar></mysidebar>
+    </div>
+    <div class="col-sm-10" style="background-color:pink;">
+      <p>Add User</p>
+
+
+      <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)" #heroForm="ngForm">
+          <input type="text"  id="login" class=" second"  formControlName="name" placeholder="Name"> <br>
+          <div *ngIf="alert" >
+            <div class="alert alert-danger" style="width:85% !important" *ngIf="!rForm.controls['name'].valid ">{{ formAlert }}</div>
+          </div>
+          <input type="text"  id="login" class=" second" formControlName="email" placeholder="Email"> <br>
+          <div *ngIf="alert" >
+            <div class="alert alert-danger" style="width:85% !important" *ngIf="!rForm.controls['email'].valid ">{{ formAlert }}</div>
+            </div>
+          <input type="text"  id="login" class=" second"  name="login" placeholder="Age"> <br>
+          <input type="submit" class="button expanded"   value="Submit">
+
+      </form>
+
+
+
+    </div>
+  </div>
+</div>

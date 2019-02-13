@@ -1,0 +1,48 @@
+<!-- <div class="wrapper fadeInDown">  -->
+
+
+<div class="wrapper ">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      
+      <div>
+      <!-- Login Form -->
+      <div #loginalert ></div>
+      <form [formGroup]="rForm" (ngSubmit)="userLogin(rForm.value)">
+      <input type="text"  id="login" class=" second" formControlName="email"   placeholder="Username">
+
+      
+      <div *ngIf="alert" >
+      <div class="alert alert-danger" style="width:85% !important" *ngIf="!rForm.controls['email'].valid ">{{ formAlert }}</div>
+      </div>
+      
+      <input type="text" id="password" class=" third" formControlName="password"  placeholder="Password">
+     
+      <div *ngIf="alert" >
+      <div class="alert alert-danger" style="width:85% !important" *ngIf="!rForm.controls['password'].valid ">{{ formAlert }}</div>
+      </div>
+      
+     <!--  <button type="button" (click)="redirect()" class=" fourth" value="Log In">LOGIN</button>  
+        <div class="alert" *ngIf="!rForm.controls['username'].valid && rForm.controls['username'].touched">{{ titleAlert }}</div>
+
+     <input type="submit" class="button expanded" value="LOGIN" [disabled]="!rForm.valid">
+    -->  
+
+     <input type="submit" class="button expanded" style="width:85% !important"  value="LOGIN">
+      </form>
+      </div>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>
+
+
+
+   
+
